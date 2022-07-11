@@ -68,8 +68,8 @@ const SolicitationDetail: NextPage = () => {
           />
           <div className="bg-[#eaeff1] p-5 text-default-font-color leading-10 text-lg">
             <h1>Modalidade:</h1>
-            <p className="text-center font-bold italic">
-              <h2 className="text-xl">Cartão de Crédito</h2>
+            <div className="text-center font-bold italic">
+              <p className="text-xl">Cartão de Crédito</p>
               <p>Número do cartão: {solicitation.card_number} </p>
               <div className="flex justify-around">
                 <p>Validade: {cardData.validityDate}</p>
@@ -77,7 +77,7 @@ const SolicitationDetail: NextPage = () => {
               </div>
               <p>{rateTableRow.number} parcelas de: <span className="text-[#31AC2B]">{rateTableRow.value}</span></p>
               <p>Tabela: {rateTableName}</p>
-            </p>
+            </div>
           </div>
           <div className="bg-[#eaeff1] p-5 text-default-font-color leading-8">
             <h1>Informações do Cliente:</h1>

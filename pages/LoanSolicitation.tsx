@@ -31,6 +31,7 @@ const LoanSolicitation: NextPage = () => {
   const [concludeLoanVisibility, setConcludeLoanVisibility] = useState(false)
   const [infoCardVisibility, setInfoCardVisibility] = useState(false)
   const [sucessfulSolicitation, setSucessfulSolicitation] = useState(false)
+  const [errorSolicitationMsg, setErrorSolicitationMsg] = useState(false)
 
   async function getClientByCPF() {
     const response = await fetch(`${BASE_URL_SERVER}/clients/?cpf=${clientCpf}`, {
@@ -77,7 +78,7 @@ const LoanSolicitation: NextPage = () => {
       'total_loan': Number(handleSolicitationValue())
     }
     postSolicitation(newSolicitation)
-    setSucessfulSolicitation(true)
+    
   }
 
   async function postSolicitation(body: ISolicitation) {
@@ -89,8 +90,16 @@ const LoanSolicitation: NextPage = () => {
         'Accept': 'application/json'
       }
     });
+    
     if (response.status >= 200 && response.status < 300) {
       setSolicitation(body)
+      setErrorSolicitationMsg(false)
+      setSucessfulSolicitation(true)
+    }
+
+    else {
+      setErrorSolicitationMsg(true)
+      setSucessfulSolicitation(false)
     }
   }
 
@@ -142,6 +151,7 @@ const LoanSolicitation: NextPage = () => {
       {
         concludeLoanVisibility && !sucessfulSolicitation &&
         <ConcludeLoan
+          errorSolicitationMsg={errorSolicitationMsg}
           handleClickConcludeLoan={handleClickConcludeLoan}
         />
       }

@@ -9,10 +9,11 @@ import RateTable from "../TaxSimulator/RateTable"
 import InfoCard from "./InfoCard"
 
 interface IConcludeLoanProps {
-  handleClickConcludeLoan: Function
+  handleClickConcludeLoan: Function,
+  errorSolicitationMsg: boolean,
 }
 
-export default function ConcludeLoan({handleClickConcludeLoan}: IConcludeLoanProps) {
+export default function ConcludeLoan({handleClickConcludeLoan, errorSolicitationMsg}: IConcludeLoanProps) {
   const { loanDesiredValue, rateTableRow, allRateTables } = useContext(ScreenContext)
   return(
     <div>
@@ -66,6 +67,10 @@ export default function ConcludeLoan({handleClickConcludeLoan}: IConcludeLoanPro
             width="w-full"
             handleClick={handleClickConcludeLoan}
           />
+          { 
+            errorSolicitationMsg &&
+            <p className="uppercase text-center text-red-600 font-bold text-sm mt-3">Erro ao fazer a solicitação, por favor tente novamente.</p>
+          }
         </div>
       </div>
       {
