@@ -1,1 +1,1 @@
-export const BASE_URL_SERVER = process.env.BASE_URL_SERVER || "http://127.0.0.1:8000"
+export const BASE_URL_SERVER = "https://loan-klutch-api.herokuapp.com"
