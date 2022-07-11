@@ -12,7 +12,7 @@ interface RateTableProps {
 
 export default function RateTable({RateTableData}: RateTableProps) {
   const { setRateTableRow, setRateTableName, rateTableRow, rateTableName } = useContext(ScreenContext)
-  const thisTableName = RateTableData.name || "Tabela padrão"
+  const thisTableName = RateTableData ? RateTableData.name : ''
   function handleTableRowClick(rateTableRow: IInstallment, rateTableName: string, e: React.FormEvent<HTMLInputElement>) {
     setRateTableRow(rateTableRow)
     setRateTableName(rateTableName)
@@ -45,6 +45,7 @@ export default function RateTable({RateTableData}: RateTableProps) {
         </thead>
         <tbody>
           {
+            RateTableData && RateTableData.installment &&
             RateTableData.installment.map((el: IInstallment, index: number) => {
               return <RateTableRow
                 rateTableName={thisTableName}
