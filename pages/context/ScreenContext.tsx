@@ -1,9 +1,9 @@
-import React, { createContext, ReactNode, useState } from "react";
-import IRateTableData from "../interfaces/IRateTableData";
-import IInstallment from "../interfaces/IInstallment";
-import ICardData from "../interfaces/ICardData";
-import IClient from "../interfaces/IClient";
-import ISolicitation from "../interfaces/ISolicitation";
+import { createContext, ReactNode, useState } from "react";
+import ICardData from "../../interfaces/ICardData";
+import IClient from "../../interfaces/IClient";
+import IInstallment from "../../interfaces/IInstallment";
+import IRateTableData from "../../interfaces/IRateTableData";
+import ISolicitation from "../../interfaces/ISolicitation";
 
 export enum Screen {
   TaxSimulator = 0,

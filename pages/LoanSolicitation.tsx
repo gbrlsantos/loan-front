@@ -2,9 +2,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import { BASE_URL_SERVER } from './services'
+import { BASE_URL_SERVER } from '../services'
 
-import ISolicitation from './interfaces/ISolicitation'
+import ISolicitation from '../interfaces/ISolicitation'
 
 import { useContext, useState } from 'react'
 import { ScreenContext } from './context/ScreenContext'

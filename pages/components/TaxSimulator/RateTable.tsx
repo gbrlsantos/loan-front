@@ -1,8 +1,8 @@
 import { useContext } from "react"
 import { ScreenContext } from "../../context/ScreenContext"
 
-import IInstallment from "../../interfaces/IInstallment"
-import IRateTableData from "../../interfaces/IRateTableData"
+import IInstallment from "../../../interfaces/IInstallment"
+import IRateTableData from "../../../interfaces/IRateTableData"
 
 import RateTableRow from "./RateTableRow"
 

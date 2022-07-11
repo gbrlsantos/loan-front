@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { ScreenContext } from "../../context/ScreenContext"
 
-import IRateTableData from "../../interfaces/IRateTableData"
+import IRateTableData from "../../../interfaces/IRateTableData"
 
 import DefaultButton from "../Common/DefaultButton"
 

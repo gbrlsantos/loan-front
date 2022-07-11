@@ -1,4 +1,4 @@
-import IInstallment from "../../interfaces/IInstallment"
+import IInstallment from "../../../interfaces/IInstallment"
 
 export interface IRateTableRowProps {
   rateTableRow: IInstallment,
