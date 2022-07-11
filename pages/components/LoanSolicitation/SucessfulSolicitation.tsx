@@ -63,7 +63,7 @@ export default function SucessfulSolicitation({handleSolicitationValue}: Sucessf
       <div className="mt-5 flex flex-col justify-center items-center gap-5 w-4/12 mb-10">
         <SucessCard
           label="Valor Total do Empréstimo"
-          value={`R$ ${handleSolicitationValue()},00`}
+          value={Number(rateTableRow.value) * Number(rateTableRow.number)}
           labelType="primary-color"
           valueType="green-color"
         />
